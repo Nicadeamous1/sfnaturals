@@ -3,6 +3,13 @@
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
   const panel = document.querySelector('.product-balm');
   const source = panel.querySelector('.product-visual img');
+  let userPaused=false;
+  const control=document.createElement('button');
+  control.className='water-control';control.type='button';
+  control.setAttribute('aria-label','Pause water ripple');
+  const hint=document.createElement('p');hint.className='water-hint';hint.textContent='Watch the blue water beside the round label.';
+  panel.querySelector('.product-copy').append(control,hint);
+  control.addEventListener('click',()=>{userPaused=!userPaused;sync();});
   const surfaces = [panel.querySelector('.product-visual'), panel.querySelector('.scene-backdrop')];
   const canvases = surfaces.map(surface => {
     const canvas = document.createElement('canvas');
@@ -31,7 +38,7 @@
   let visible=false, frame=0, last=0;
   function draw(time){
     frame=0;
-    if(preference.matches || document.hidden || !visible || panel.getAttribute('aria-hidden')==='true') return;
+    if(preference.matches || userPaused || document.hidden || !visible || panel.getAttribute('aria-hidden')==='true') return;
     frame=requestAnimationFrame(draw);
     if(time-last<42 || !source.complete || !source.naturalWidth) return;
     last=time;
@@ -39,8 +46,8 @@
     const seconds=time/1000;
     for(let y=Math.floor(.145*size);y<.335*size;y+=2){
       const depth=(y/size-.145)/(.335-.145);
-      const dx=Math.sin(y*.065-seconds*1.05)*2.3*depth;
-      const dy=Math.sin(y*.045-seconds*.8)*1.25*depth;
+      const dx=Math.sin(y*.048-seconds*1.6)*14*(.45+depth*.55);
+      const dy=Math.sin(y*.038-seconds*1.15)*6*(.4+depth*.6);
       context.drawImage(source,0,(y+dy)/size*source.naturalHeight,source.naturalWidth,2/size*source.naturalHeight,dx,y,size,2);
     }
     context.globalCompositeOperation='destination-in';context.drawImage(mask,0,0);context.globalCompositeOperation='source-over';
@@ -48,9 +55,13 @@
     canvases[1].style.transform=surfaces[1].querySelector('img').style.transform;
   }
   function sync(){
-    canvases.forEach(canvas=>canvas.hidden=preference.matches);
+    canvases.forEach(canvas=>canvas.hidden=preference.matches || userPaused);
+    control.disabled=preference.matches;
+    control.textContent=preference.matches?'Motion off · reduced motion':userPaused?'Play water ripple':'Pause water ripple';
+    control.setAttribute('aria-label',control.textContent);
+    control.setAttribute('aria-pressed',String(!preference.matches&&!userPaused));
     if(frame)cancelAnimationFrame(frame); frame=0;
-    if(!preference.matches && !document.hidden && visible && panel.getAttribute('aria-hidden')!=='true')frame=requestAnimationFrame(draw);
+    if(!preference.matches && !userPaused && !document.hidden && visible && panel.getAttribute('aria-hidden')!=='true')frame=requestAnimationFrame(draw);
   }
   new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;sync();},{threshold:0}).observe(document.querySelector('.scene-pin'));
   preference.addEventListener('change',sync);document.addEventListener('visibilitychange',sync);
