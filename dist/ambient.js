@@ -2,8 +2,8 @@
 (() => {
  const preference=matchMedia('(prefers-reduced-motion: reduce)');
  const scenes=[
-  {id:'soap',width:355,height:768,top:.015,bottom:.29,dx:9,dy:3,speed:.7,label:'sky drift',hint:'Watch the pink sky above the soap.'},
-  {id:'lotion',width:640,height:640,top:.015,bottom:.225,dx:13,dy:4,speed:1.1,label:'foliage motion',hint:'Watch the leaves above the lotion.'}
+  {id:'soap',width:355,height:768,top:.015,bottom:.29,dx:11,dy:3,speed:.8,label:'sky drift',hint:'Watch the pink sky above the soap.'},
+  {id:'lotion',width:640,height:640,top:.015,bottom:.225,speed:1,label:'canopy light',hint:'Soft light across the canopy; the photograph stays still.'}
  ];
  scenes.forEach(settings=>{
   const panel=document.querySelector('.product-'+settings.id);
@@ -24,10 +24,21 @@
    frame=0;if(!allowed())return;frame=requestAnimationFrame(draw);
    if(time-last<42||!source.complete||!source.naturalWidth)return;last=time;
    ctx.clearRect(0,0,width,height);const t=time/1000*settings.speed;
-   for(let y=Math.floor(top);y<bottom;y+=2){
-    const dx=Math.sin(t+y*.017)*settings.dx;
-    const dy=Math.sin(t*.8+y*.023)*settings.dy;
-    ctx.drawImage(source,0,(y+dy)/height*source.naturalHeight,source.naturalWidth,2/height*source.naturalHeight,dx,y,width,2);
+   if(settings.id==='lotion'){
+    // Light only: never resample, displace or scale any lotion-image pixel.
+    // A broad, low-opacity highlight moves through the canopy mask.
+    const center=width*(.5+.65*Math.sin(t*.52));
+    const glow=ctx.createLinearGradient(center-width*.4,0,center+width*.4,0);
+    glow.addColorStop(0,'rgba(255,249,219,0)');
+    glow.addColorStop(.5,'rgba(255,249,219,.11)');
+    glow.addColorStop(1,'rgba(255,249,219,0)');
+    ctx.fillStyle=glow;ctx.fillRect(0,0,width,height);
+   }else{
+    for(let y=Math.floor(top);y<bottom;y+=2){
+     const dx=Math.sin(t+y*.017)*settings.dx;
+     const dy=Math.sin(t*.8+y*.023)*settings.dy;
+     ctx.drawImage(source,0,(y+dy)/height*source.naturalHeight,source.naturalWidth,2/height*source.naturalHeight,dx,y,width,2);
+    }
    }
    ctx.globalCompositeOperation='destination-in';ctx.drawImage(mask,0,0);ctx.globalCompositeOperation='source-over';
    canvases.forEach(c=>{const target=c.getContext('2d');target.clearRect(0,0,width,height);target.drawImage(buffer,0,0);});
@@ -44,3 +55,4 @@
   preference.addEventListener('change',sync);document.addEventListener('visibilitychange',sync);source.addEventListener('load',sync);sync();
  });
 })();
+
