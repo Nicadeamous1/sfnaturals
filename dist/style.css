@@ -9,3 +9,5 @@
 
 /* UI-free source crops keep framing identical at every viewport. */
 .label-crop img{position:static;width:100%;height:100%;object-fit:contain}.soap-art{aspect-ratio:507/405;background:transparent}.soap-art img{width:100%;height:100%;object-fit:contain}
+
+.soap-art{aspect-ratio:709/1536}.soap-art img{object-fit:contain}
