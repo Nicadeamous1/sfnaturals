@@ -1,0 +1,13 @@
+{
+  "files": {
+    "assets/3d/source/tallow-balm.blend": 1362442,
+    "assets/3d/exports/tallow-balm.raw.glb": 1436372,
+    "assets/3d/exports/tallow-balm.portable.glb": 411408,
+    "dist/assets/3d/tallow-balm.v1.glb": 188544,
+    "dist/assets/3d/tallow-balm-static.v1.webp": 54496
+  },
+  "textureBytes": 110704,
+  "meshCount": 13,
+  "materials": 6,
+  "notes": "Meshopt preserves smooth geometry and component pivots; WebP quality 92 preserves original label pixels. KTX2 evaluated but not selected: three small labels do not justify decoder/transcoder overhead. No Draco needed alongside Meshopt. Raw/portable exports retained for interchange; only optimized GLB and static WebP ship."
+}

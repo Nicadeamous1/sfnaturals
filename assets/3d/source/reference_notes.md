@@ -1,0 +1,9 @@
+# Tallow Balm model contract and references
+
+Source: existing dist/assets/tallow-balm.jpg, 1536px supplied raster. Inspected front, back, and separate round label on 2026-09-16. Front jar spans approximately x216–694, y835–1380: width/height about .88; lid height about .18 total. Broad cylindrical body, shoulder below neck, rounded foot, black screw cap, burgundy rectangular front and cream ingredient back. Top label shown separately at approximately x438–1098,y153–812.
+
+Dimensions are inferred presentation dimensions, not verified production packaging: diameter 64mm, overall height 70mm. Front/rear photo perspective limits exact reconstruction; use separate named ReferenceCamera at near-front elevation. Hidden screw thread and inner cavity are plausible construction assumptions. No text is synthesized: all three label surfaces use original cropped pixels, including existing wording and weight. Final formula/claims/weight still require maker confirmation; retain current provisional HTML.
+
+Required semantic objects: Jar, Lid assembly, Balm, FrontLabel, BackLabel, TopLabel. Closed assembly at rest; lid lifts up to 20mm then rejoins. Smooth rounded silhouette, amber material, satin black cap, warm metallic trim and subtle paper roughness. Target roughly 10k–35k triangles, adjusted by inspected quality. Export only product collection, never studio lights/ground. Render portrait hero plus six-view evidence and opened state. Source .blend remains editable, modifiers preserved. Pipeline must be deterministic and fresh-import tested.
+
+Stages: contract/reference (complete); graybox/proportions; primary/secondary; structural; materials; polish; export/import. Approval gate applies only to production deployment. Review: does the silhouette match the supplied jar, are labels oriented/readable and undistorted, does the cap actually cover the opening, is the open jar believable, do materials remain distinct in Three.js?
