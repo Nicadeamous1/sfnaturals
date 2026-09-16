@@ -1,0 +1,55 @@
+[
+  {
+    "test": "hero product/label/wood pixels protected",
+    "protectedMax": 0,
+    "frames": 3,
+    "kind": "water",
+    "videoPlaying": true
+  },
+  {
+    "test": "hidden document pauses video (simulated event)",
+    "pass": true
+  },
+  {
+    "test": "pause/resume and shop dialog",
+    "pass": true
+  },
+  {
+    "test": "soap full periodic cycle, protected pixels and render cost",
+    "meanChanged": 0.5466723518192488,
+    "seamMean": 0.0001962294600938967,
+    "protectedMax": 0,
+    "renderMs": 0.12000000476837158
+  },
+  {
+    "test": "lotion full periodic cycle, protected pixels and render cost",
+    "meanChanged": 1.245745849609375,
+    "seamMean": 0.0008502197265625,
+    "protectedMax": 0,
+    "renderMs": 0.3100000023841858
+  },
+  {
+    "test": "hero offscreen video paused",
+    "pass": true
+  },
+  {
+    "test": "reduced",
+    "pass": true,
+    "mediaRequests": 0
+  },
+  {
+    "test": "save-data",
+    "pass": true,
+    "mediaRequests": 0
+  },
+  {
+    "test": "video-error",
+    "pass": true,
+    "mediaRequests": 1
+  },
+  {
+    "test": "phone",
+    "pass": true,
+    "mediaRequests": 1
+  }
+]

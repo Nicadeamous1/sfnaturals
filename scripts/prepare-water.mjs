@@ -1,0 +1,5 @@
+import {spawnSync} from 'node:child_process';
+// Usage: FFMPEG_EXECUTABLE=<ffmpeg> node scripts/prepare-water.mjs <downloaded-source.mp4>
+const ffmpeg=process.env.FFMPEG_EXECUTABLE,input=process.argv[2];if(!ffmpeg||!input)throw new Error('Set FFMPEG_EXECUTABLE and supply the licensed source path. See docs/environment-motion.md.');
+const filter='[0:v]crop=3840:1440:0:600,scale=960:360,lutrgb=r=val*0.58:g=val*1.2:b=val*1.42,eq=gamma=1.16:contrast=1.08:saturation=1.05,gblur=sigma=5,split[a][b];[a]trim=start=0:end=1,setpts=PTS-STARTPTS,fps=24,settb=AVTB[head];[b]trim=start=1:end=13,setpts=PTS-STARTPTS,fps=24,settb=AVTB[body];[body][head]xfade=transition=fade:duration=1:offset=11,format=yuv420p[out]';
+const result=spawnSync(ffmpeg,['-hide_banner','-ss','4','-t','13','-i',input,'-filter_complex',filter,'-map','[out]','-an','-c:v','libx264','-preset','slow','-crf','23','-movflags','+faststart','dist/assets/motion/coastal-water.v1.mp4','-y'],{stdio:'inherit'});if(result.status!==0)throw new Error('Video preparation failed');

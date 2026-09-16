@@ -28,3 +28,6 @@ Observed local LCP: desktop 248 ms, tablet 132 ms, phone 124 ms, small phone 120
 
 ## Still needed
 Review of this selected visual direction; actual pricing, variants, inventory and checkout provider/access; final labels and approved claims; physical-device testing; broader homepage rhythm work only after hero review. Explicit production approval remains required.
+
+## Environmental motion upgrade
+The current environmental implementation supersedes the initial scanline/sky effects described above. See environment-motion.md for filmed ocean provenance, cloud/light compositing, full-cycle evidence, protection tests and current performance. The commerce layout is unchanged.
