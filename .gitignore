@@ -1,2 +1,12 @@
 .sites-runtime/
 work/
+
+node_modules/
+*.blend1
+*.blend2
+outputs/
+
+
+assets/3d/previews/graybox.png
+assets/3d/previews/evidence/
+

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "desktop",
+    "lcp": 284,
+    "longTaskMs": 96,
+    "cls": 0.000017072136019483026,
+    "bytes": 1502118,
+    "videoRequests": 1,
+    "environmentFrames": 88,
+    "videoPaused": false
+  },
+  {
+    "name": "phone",
+    "lcp": 120,
+    "longTaskMs": 58,
+    "cls": 0.0005544550510843629,
+    "bytes": 1345704,
+    "videoRequests": 1,
+    "environmentFrames": 90,
+    "videoPaused": false
+  },
+  {
+    "name": "phone-slow4G",
+    "lcp": 3644,
+    "longTaskMs": 657,
+    "cls": 0.0005544550510843629,
+    "bytes": 1345704,
+    "videoRequests": 1,
+    "environmentFrames": 83,
+    "videoPaused": false
+  }
+]

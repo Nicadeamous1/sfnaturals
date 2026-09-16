@@ -1,0 +1,46 @@
+[
+  {
+    "name": "desktop model + all stages + pause + still",
+    "pass": true
+  },
+  {
+    "name": "offscreen suspension",
+    "pass": true
+  },
+  {
+    "name": "phone",
+    "pass": true
+  },
+  {
+    "name": "reduced motion",
+    "pass": true
+  },
+  {
+    "name": "WebGL creation failure",
+    "pass": true
+  },
+  {
+    "name": "model request failure",
+    "pass": true
+  },
+  {
+    "name": "context loss fallback",
+    "pass": true
+  },
+  {
+    "name": "JavaScript disabled remains usable",
+    "pass": true
+  },
+  {
+    "name": "existing product dialogs and CTA",
+    "pass": true
+  },
+  {
+    "name": "low memory avoids 3D",
+    "pass": true
+  },
+  {
+    "name": "hidden document suspension (simulated visibility event)",
+    "pass": true
+  }
+]

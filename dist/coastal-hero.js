@@ -1,0 +1,1 @@
+(()=>{const host=document.querySelector('.coastal-art');if(!host)return;SFEnvironment({kind:'water',source:host.querySelector('img'),surfaces:[host],canvases:[host.querySelector('canvas')],button:host.querySelector('button'),observe:host,label:'scene'});})();

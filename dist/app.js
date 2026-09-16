@@ -12,7 +12,7 @@ if (!reduced && 'IntersectionObserver' in window) {
   let pending = false;
   function animateScroll() {
     const h = hero.getBoundingClientRect();
-    if (h.bottom > 0) heroImage.style.transform = `translateY(${Math.max(0, -h.top) * .14}px) scale(1.06)`;
+    if (h.bottom > 0 && heroImage) heroImage.style.transform = `translateY(${Math.max(0, -h.top) * .14}px) scale(1.06)`;
     const t = texture.getBoundingClientRect();
     const progress = Math.max(0, Math.min(1, (innerHeight - t.top) / (innerHeight + t.height)));
     textureImage.style.transform = `scale(${1.17 - progress * .13}) translateY(${(progress-.5)*24}px)`;
@@ -25,7 +25,7 @@ if (!reduced && 'IntersectionObserver' in window) {
 const dialog = document.querySelector('#product-dialog');
 let previousFocus;
 function closeDialog() { dialog.close(); document.body.style.overflow = ''; previousFocus?.focus(); }
-const products = [{"id":"balm","name":"Tallow","last":"Balm","image":"tallow-balm.jpg","alt":"Supplied SF Tallow Balm artwork at the beach","scent":"Orange & frankincense","badge":"SUPPLIED PRODUCT ARTWORK","note":"Supplied product artwork. Final formula, size, price, and availability are awaiting confirmation."},{"id":"soap","name":"Beef Tallow","last":"Soap","image":"soap-sunset.jpg","alt":"Supplied orange-label SF tallow soap with pink and purple sunset, ocean, and rocks","scent":"Orange essential oil","badge":"SUPPLIED PRODUCT ARTWORK","note":"Supplied orange-label artwork. Final product details, size, price, and availability are awaiting confirmation."},{"id":"lotion","name":"Homemade","last":"Lotion","image":"lotion-citrus-concept.png","alt":"Illustrative lotion packaging in a sunlit citrus grove based on the supplied SF label","scent":"Orange & frankincense","badge":"PACKAGING CONCEPT","note":"Supplied lotion label. Final formula, packaging, size, price, and availability are awaiting confirmation."}];
+const products = [{"id":"balm","name":"Tallow","last":"Balm","image":"tallow-balm.jpg","alt":"Supplied SF Tallow Balm artwork at the beach","scent":"Orange & frankincense","badge":"SUPPLIED PRODUCT ARTWORK","note":"Supplied product artwork. Final formula, size, price, and availability are awaiting confirmation."},{"id":"soap","name":"Beef Tallow","last":"Soap","image":"soap-sunset.jpg","alt":"Supplied orange-label SF tallow soap with pink and purple sunset, ocean, and rocks","scent":"Orange essential oil","badge":"SUPPLIED PRODUCT ARTWORK","note":"Supplied orange-label artwork. Final product details, size, price, and availability are awaiting confirmation."},{"id":"lotion","name":"Homemade","last":"Lotion","image":"lotion-citrus-concept.webp","alt":"Illustrative lotion packaging in a sunlit citrus grove based on the supplied SF label","scent":"Orange & frankincense","badge":"PACKAGING CONCEPT","note":"Supplied lotion label. Final formula, packaging, size, price, and availability are awaiting confirmation."}];
 document.querySelectorAll('[data-product]').forEach(button => button.addEventListener('click', () => {
   const product = products.find(p => p.id === button.dataset.product);
   previousFocus = button;

@@ -1,0 +1,127 @@
+[
+  {
+    "name": "desktop",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "network": "local unthrottled",
+    "metrics": {
+      "lcp": 236,
+      "cls": 0.004193957022207755,
+      "longTasks": 285
+    },
+    "state": {
+      "productScene": "",
+      "state": "ready",
+      "quality": "full",
+      "rendering": "true",
+      "stage": "0",
+      "drawCalls": "26",
+      "triangles": "28544",
+      "frames": "150",
+      "frameMs": "16.7"
+    },
+    "resourceBytes": 1416479,
+    "modelRequested": true,
+    "load": 170
+  },
+  {
+    "name": "laptop",
+    "viewport": [
+      1280,
+      800
+    ],
+    "network": "local unthrottled",
+    "metrics": {
+      "lcp": 92,
+      "cls": 0.004895768952369689,
+      "longTasks": 57
+    },
+    "state": {
+      "productScene": "",
+      "state": "ready",
+      "quality": "full",
+      "rendering": "true",
+      "stage": "0",
+      "drawCalls": "26",
+      "triangles": "28544",
+      "frames": "180",
+      "frameMs": "16.7"
+    },
+    "resourceBytes": 1416479,
+    "modelRequested": true,
+    "load": 79.60000014305115
+  },
+  {
+    "name": "tablet",
+    "viewport": [
+      820,
+      1180
+    ],
+    "network": "local unthrottled",
+    "metrics": {
+      "lcp": 100,
+      "cls": 0.004748058384014966,
+      "longTasks": 0
+    },
+    "state": {
+      "productScene": "",
+      "state": "ready",
+      "quality": "reduced",
+      "rendering": "true",
+      "stage": "0",
+      "drawCalls": "26",
+      "triangles": "28544",
+      "frames": "90",
+      "frameMs": "33.4"
+    },
+    "resourceBytes": 1416479,
+    "modelRequested": true,
+    "load": 86.90000009536743
+  },
+  {
+    "name": "phone",
+    "viewport": [
+      390,
+      844
+    ],
+    "network": "local unthrottled",
+    "metrics": {
+      "lcp": 108,
+      "cls": 0.00029979066436668604,
+      "longTasks": 0
+    },
+    "state": {
+      "productScene": "",
+      "state": "static",
+      "quality": "static",
+      "reason": "capability-policy"
+    },
+    "resourceBytes": 458146,
+    "modelRequested": false,
+    "load": 101.09999990463257
+  },
+  {
+    "name": "phone-slow4G",
+    "viewport": [
+      390,
+      844
+    ],
+    "network": "1.6Mbps/150ms, CPU 4x emulated",
+    "metrics": {
+      "lcp": 1236,
+      "cls": 0.00029979066436668604,
+      "longTasks": 0
+    },
+    "state": {
+      "productScene": "",
+      "state": "static",
+      "quality": "static",
+      "reason": "capability-policy"
+    },
+    "resourceBytes": 458146,
+    "modelRequested": false,
+    "load": 2716.0999999046326
+  }
+]

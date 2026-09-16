@@ -1,0 +1,7 @@
+import {Scene,DataTexture,HalfFloatType,RGBAFormat,CubeUVReflectionMapping,LinearFilter,LinearSRGBColorSpace,HemisphereLight,DirectionalLight} from 'three';
+export class ProductLighting {
+ private environment?:DataTexture;private abort=new AbortController();private disposed=false;
+ constructor(private scene:Scene){scene.environmentIntensity=.6;scene.add(new HemisphereLight(0xffedce,0x173a38,1.2));const key=new DirectionalLight(0xffead1,2.3);key.position.set(-3,4,4);scene.add(key);const fill=new DirectionalLight(0xd9e8ee,.8);fill.position.set(3,1,2);scene.add(fill);}
+ async load(){const response=await fetch('assets/3d/studio-environment.v1.bin.gz',{signal:this.abort.signal,cache:'force-cache'});if(!response.ok||!response.body)throw new Error('Studio reflections unavailable');const data=await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();if(this.disposed)return;this.environment=new DataTexture(new Uint16Array(data),336,256,RGBAFormat,HalfFloatType);this.environment.mapping=CubeUVReflectionMapping;this.environment.minFilter=LinearFilter;this.environment.magFilter=LinearFilter;this.environment.colorSpace=LinearSRGBColorSpace;this.environment.generateMipmaps=false;this.environment.needsUpdate=true;this.scene.environment=this.environment;}
+ dispose(){this.disposed=true;this.abort.abort();this.environment?.dispose();this.scene.environment=null;}
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Calm Ocean Waves at Sunset",
+  "creator": "William Chen",
+  "sourcePage": "https://www.pexels.com/video/calm-ocean-waves-at-sunset-34754995/",
+  "license": "Pexels License",
+  "licenseUrl": "https://www.pexels.com/license/",
+  "retrieved": "2026-09-16",
+  "sourceDownload": "https://videos.pexels.com/video-files/34754995/14733337_3840_2160_24fps.mp4",
+  "sourceBytes": 1124487692,
+  "derivative": "coastal-water.v1.mp4",
+  "derivativeBytes": 593467,
+  "durationSeconds": 12,
+  "dimensions": [960,360],
+  "fps": 24,
+  "changes": "13-second source excerpt at 4 seconds; crop; teal color grade; depth blur; one-second loop dissolve; silent H.264 with faststart. Browser adds protective matte and brightness/saturation matching.",
+  "note": "Free downloaded environmental footage only. No endorsement implied. Attribution voluntarily retained here. Original SF artwork unchanged. No paid or trial generation used."
+}

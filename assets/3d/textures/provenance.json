@@ -1,0 +1,24 @@
+{
+  "source": "dist/assets/tallow-balm.jpg",
+  "crops": {
+    "front": {
+      "left": 244,
+      "top": 984,
+      "width": 419,
+      "height": 351
+    },
+    "back": {
+      "left": 895,
+      "top": 999,
+      "width": 375,
+      "height": 309
+    },
+    "top": {
+      "left": 438,
+      "top": 153,
+      "width": 660,
+      "height": 660
+    }
+  },
+  "method": "Exact raster extraction; no generated or retyped lettering. Perspective baked into supplied photo remains. Replace with production flat artwork before final packaging approval."
+}
