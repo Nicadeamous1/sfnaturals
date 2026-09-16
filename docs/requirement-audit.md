@@ -1,41 +1,23 @@
 # 3D upgrade requirement audit
 
-Baseline: f36d90e49d548c51507b0ce82f188a218bfd202a (production v11). Local and fetched remote match. Branch: feature/interactive-3d-products. Production deployment prohibited pending explicit approval.
+Baseline: f36d90e49d548c51507b0ce82f188a218bfd202a (production v11). Branch: feature/interactive-3d-products. Production remains unchanged.
 
-| Brief section | Acceptance / evidence | Status |
-|---|---|---|
-| 1 Audit | Existing static HTML/CSS/JS, Sites repository; fetched main matches HEAD; no GitHub counterpart confirmed; asset inventory; baseline tests/performance | In progress |
-| 2 Toolchain | Blender 5.0.1 reused; uv 0.12.15; MCP 2.0.0 E2E object/inspect/export passed; Studio 0.6.2 full plugin installed; companion traced through video/creator, exact link unavailable | In progress |
-| 3 Real labels | Extract original pixels from tallow-balm.jpg; no generated or retyped label text; identify production replacements | Pending |
-| 4 Model | Separate amber jar, black lid, product volume, front/back/top labels; editable source, blend, GLB, textures, renders | Pending |
-| 5 Story | Brand, front focus, lid opening, verified ingredient cues, reassembly, family; subtle pointer/idle | Pending |
-| 6 Reuse | Product config + Scene/Model/Lighting/Loader/Timeline/Interaction/Fallback/Performance modules | Pending |
-| 7 Optimize | GLB, meshopt evaluation, texture compression, payload report, lazy/cached assets | Pending |
-| 8 Capability | Full/reduced/static modes; reduced motion, initialization/WebGL/context failure | Pending |
-| 9 Performance | Offscreen/hidden suspension, clean disposal, desktop/laptop/tablet/phone/network measurements | Pending |
-| 10 Identity | Existing teal/cream/burgundy/gold and accepted scenes preserved | Pending |
-| 11 SEO/accessibility | HTML copy and controls remain; keyboard and screen reader behavior | Pending |
-| 12 Tests | Baseline asset refs pass; no previous test suite/typecheck/lint/build. New checks + real visual inspection | In progress |
-| 13 Repository | Feature branch; logical commits; push actual existing source repo; no unrelated repo/false GitHub claim | In progress |
-| 14 Deliverables | All 18 enumerated below; docs/3d-toolchain.md and docs/product-3d-workflow.md | Pending |
-| 15 Execution | Autonomous full loop; stop only genuine blocker or production approval | Ongoing |
+| Brief section | Final evidence / disposition |
+|---|---|
+| 1 Audit | Static architecture, accepted source/history and baseline measurements inspected; user-supplied GitHub repository verified empty and seeded with accepted history. |
+| 2 Toolchain | Blender reused; uv/Bun, maintained Blender MCP and full Studio plugin installed and actually called. Exact companion unavailable; permitted official glTF fallback documented. |
+| 3 Real labels | Exact source-image crops, retained originals and provenance; no retyped/generated lettering. |
+| 4 Model | Editable .blend/script, amber jar, black lid, balm, three label surfaces; raw/portable/optimized GLBs and inspected six-view evidence. |
+| 5 Story | Six stages, lid opening/reassembly, supplied-label ingredient cues, subtle pointer/idle. |
+| 6 Reuse | Product configuration and separate scene/model/lighting/loader/timeline/interaction/fallback/performance modules. |
+| 7 Optimize | Meshopt/WebP, baked reflections, lazy versioned runtime assets; complete payload accounting. |
+| 8 Capability | Full/reduced/static policies, reduced motion and tested failure fallbacks. |
+| 9 Performance | Offscreen/hidden/pause suspension and disposal; measured desktop/laptop/tablet/phone plus throttled phone. Mobile simulated LCP limitation disclosed. |
+| 10 Identity | Existing palette, copy, collages, dialogs and accepted ocean/ambient effects preserved. |
+| 11 SEO/accessibility | HTML content, semantic buttons and keyboard controls; Lighthouse accessibility/SEO 100. Manual assistive testing not claimed. |
+| 12 Tests | Five Node tests and 11 browser scenarios pass; typecheck/lint/build pass; actual screenshots inspected. |
+| 13 Repository | Logical feature commits, GitHub feature branch and draft PR; no production deployment. |
+| 14 Deliverables | Full 18-item report in outputs/3d-review-report.md; toolchain and reusable product workflow documentation included. |
+| 15 Execution | Build/model/verification/review handoff completed autonomously; production approval remains separate. |
 
-## Deliverable checklist
-1. Actual repository and branch: identified Sites-managed source; feature branch created.
-2. Commits: pending.
-3. Separate preview URL: pending; live URL must remain v11.
-4. Desktop/tablet/phone screenshots: pending.
-5. Blender version/path: 5.0.1, D:/Blender/blender.exe.
-6. Blender MCP: 2.0.0; add-on protocol 7; E2E passed, logs work/mcp-roundtrip.json.
-7. Blender Agent Studio: full plugin 0.6.2+codex.20260914085919 installed; callable test pending.
-8. Exact Blender-to-web skill: video description and creator article retrieved; no repo URL supplied by either; fallback must be documented.
-9. Other requirements: uv/Bun installed; Three.js/optimization/test packages installing; no unverified random add-ons.
-10. Source .blend: pending.
-11. GLB: pending.
-12. Textures: pending.
-13. Web payload: pending.
-14. Mobile fallback: pending.
-15. Desktop performance: pending.
-16. Mobile performance: pending.
-17. Tests/results: pending.
-18. Manual work: production artwork/dimensions/formula confirmation; no fabricated facts.
+See validation-report.md for measured evidence, scope and outstanding manual work. Exact commit and PR references are in the delivery report.
