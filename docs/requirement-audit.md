@@ -21,3 +21,6 @@ Baseline: f36d90e49d548c51507b0ce82f188a218bfd202a (production v11). Branch: fea
 | 15 Execution | Build/model/verification/review handoff completed autonomously; production approval remains separate. |
 
 See validation-report.md for measured evidence, scope and outstanding manual work. Exact commit and PR references are in the delivery report.
+
+## Superseding commerce-first direction
+The current homepage is now a bounded hybrid coastal hero proof. The earlier interactive experience and its measurements remain at /3d-study.html. See hero-decision.md and coastal-hero-validation.json for the current scope, comparison and results. Earlier Lighthouse scores do not describe the replacement hero. The full lower-page redesign is deferred until hero review, as explicitly requested.

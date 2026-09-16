@@ -32,3 +32,6 @@ Observed throttled phone (1.6 Mbps, 150 ms latency, CPU 4x): LCP 1,236 ms; load 
 - Production publication requires the owner's explicit approval after review.
 
 Evidence: browser-tests.json, measured-performance.json, lighthouse-summary.json, model-import-metrics.json, asset-payload.json, bundle-sizes.json and toolchain-verification.json. Human-readable Lighthouse reports and screenshots are in outputs/.
+
+## Current review scope
+A later commerce-first brief superseded the live-3D homepage presentation. The pipeline remains available in /3d-study.html, while the homepage uses original coastal artwork and protected environmental motion. See hero-decision.md for the current visual decision and validation. Do not apply this study's Lighthouse scores to the new hero.

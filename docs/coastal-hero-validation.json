@@ -1,0 +1,66 @@
+[
+  {
+    "name": "desktop",
+    "pass": true,
+    "overflow": false,
+    "ctaBottom": 699.390625,
+    "metrics": {
+      "lcp": 248,
+      "cls": 0.000017072136019483026
+    },
+    "resourceBytes": 1231375,
+    "glb": false,
+    "frames": 16
+  },
+  {
+    "name": "tablet",
+    "pass": true,
+    "overflow": false,
+    "ctaBottom": 1031.078125,
+    "metrics": {
+      "lcp": 132,
+      "cls": 0.000031005231579445214
+    },
+    "resourceBytes": 1231375,
+    "glb": false,
+    "frames": 21
+  },
+  {
+    "name": "phone",
+    "pass": true,
+    "overflow": false,
+    "ctaBottom": 717.296875,
+    "metrics": {
+      "lcp": 124,
+      "cls": 0.0005544550510843629
+    },
+    "resourceBytes": 1074961,
+    "glb": false,
+    "frames": 21
+  },
+  {
+    "name": "small-phone",
+    "pass": true,
+    "overflow": false,
+    "ctaBottom": 539.640625,
+    "metrics": {
+      "lcp": 120,
+      "cls": 0.0008774433060830904
+    },
+    "resourceBytes": 1074961,
+    "glb": false,
+    "frames": 21
+  },
+  {
+    "name": "motion pause and protected product pixels",
+    "pass": true
+  },
+  {
+    "name": "reduced-motion",
+    "pass": true
+  },
+  {
+    "name": "no-JavaScript",
+    "pass": true
+  }
+]

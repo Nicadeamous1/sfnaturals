@@ -12,7 +12,7 @@ if (!reduced && 'IntersectionObserver' in window) {
   let pending = false;
   function animateScroll() {
     const h = hero.getBoundingClientRect();
-    if (h.bottom > 0) heroImage.style.transform = `translateY(${Math.max(0, -h.top) * .14}px) scale(1.06)`;
+    if (h.bottom > 0 && heroImage) heroImage.style.transform = `translateY(${Math.max(0, -h.top) * .14}px) scale(1.06)`;
     const t = texture.getBoundingClientRect();
     const progress = Math.max(0, Math.min(1, (innerHeight - t.top) / (innerHeight + t.height)));
     textureImage.style.transform = `scale(${1.17 - progress * .13}) translateY(${(progress-.5)*24}px)`;

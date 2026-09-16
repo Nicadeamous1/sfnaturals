@@ -71,3 +71,6 @@ Record actual payload bytes and cold/warm browser metrics; keep Lighthouse's sim
 ## Production handoff still needs
 Print-ready flat label art, verified package dimensions/materials, and confirmed product formula/claims/weights. These are product facts, not things to infer from a concept render. No checkout or price has been added. The unavailable exact video companion skill remains documented in `3d-toolchain.md`; this project uses the explicit maintained glTF fallback workflow.
 
+
+## Homepage presentation decision
+The current home uses a hybrid coastal hero. The live 3D pipeline remains available as /3d-study.html and source assets. Adding another 3D asset does not imply it belongs on the homepage: compare a still against approved product photography first. Read hero-decision.md before extending the presentation.
