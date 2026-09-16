@@ -1,0 +1,72 @@
+{
+  "schema_version": 2,
+  "evidence_settings_version": 2,
+  "studio": {
+    "presentation": "light",
+    "floor_color": [
+      0.32,
+      0.34,
+      0.36,
+      1.0
+    ],
+    "light_powers": [
+      2.0782106312155157,
+      0.8312842524862063,
+      3.1173159468232736
+    ],
+    "camera_distance": 0.16578400284051895,
+    "ortho_scale": 0.10451600179076194,
+    "floor_size": 14.416000247001648,
+    "floor_offset": 0.00043248000741004947,
+    "clip_start": 7.208000123500824e-05,
+    "clip_end": 72.08000123500824
+  },
+  "requested_presentation": "light",
+  "subject_luminance_hint": 0.0869742207423587,
+  "render_engine": "BLENDER_EEVEE",
+  "view_transform": "AgX",
+  "exposure": 0.0,
+  "input": "C:\\Users\\mmast\\Documents\\Codex\\2026-09-15\\sf-naturals-storefront\\work\\optimized-decoded.glb",
+  "blender_version": "5.0.1",
+  "resolution": 512,
+  "requested_views": [
+    "perspective",
+    "front",
+    "back",
+    "left",
+    "right",
+    "top"
+  ],
+  "evidence_scope": "full_multiview",
+  "material_mode": "source",
+  "hidden_objects": [],
+  "head_texture": null,
+  "bounds": {
+    "min": [
+      -0.0326,
+      -0.0326,
+      0.001
+    ],
+    "max": [
+      0.0326,
+      0.0326,
+      0.07308
+    ],
+    "dimensions": [
+      0.0652,
+      0.0652,
+      0.07208
+    ]
+  },
+  "views": [
+    "C:\\Users\\mmast\\Documents\\Codex\\2026-09-15\\sf-naturals-storefront\\assets\\3d\\previews\\final-evidence\\perspective.png",
+    "C:\\Users\\mmast\\Documents\\Codex\\2026-09-15\\sf-naturals-storefront\\assets\\3d\\previews\\final-evidence\\front.png",
+    "C:\\Users\\mmast\\Documents\\Codex\\2026-09-15\\sf-naturals-storefront\\assets\\3d\\previews\\final-evidence\\back.png",
+    "C:\\Users\\mmast\\Documents\\Codex\\2026-09-15\\sf-naturals-storefront\\assets\\3d\\previews\\final-evidence\\left.png",
+    "C:\\Users\\mmast\\Documents\\Codex\\2026-09-15\\sf-naturals-storefront\\assets\\3d\\previews\\final-evidence\\right.png",
+    "C:\\Users\\mmast\\Documents\\Codex\\2026-09-15\\sf-naturals-storefront\\assets\\3d\\previews\\final-evidence\\top.png"
+  ],
+  "contact_sheet": "C:\\Users\\mmast\\Documents\\Codex\\2026-09-15\\sf-naturals-storefront\\assets\\3d\\previews\\final-evidence\\contact_sheet.png",
+  "animation_frames": [],
+  "animation_contact_sheet": null
+}

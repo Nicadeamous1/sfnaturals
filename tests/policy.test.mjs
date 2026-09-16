@@ -1,0 +1,9 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {build} from 'esbuild';
+const policy=(await build({entryPoints:['src/product3d/policy.ts'],bundle:true,format:'esm',write:false})).outputFiles[0].text;
+const {selectQuality,shouldRender}=await import('data:text/javascript;base64,'+Buffer.from(policy).toString('base64'));
+const normal={reducedMotion:false,saveData:false,width:1440,memory:8,cores:8,slowNetwork:false};
+test('capability policy retains static content on unsuitable devices',()=>{assert.equal(selectQuality(normal),'full');assert.equal(selectQuality({...normal,width:820}),'reduced');for(const delta of [{width:390},{memory:2},{cores:2},{reducedMotion:true},{saveData:true},{slowNetwork:true}])assert.equal(selectQuality({...normal,...delta}),'static');});
+test('render loop cannot run offscreen, hidden, paused, or disposed',()=>{const base={visible:true,hidden:false,paused:false,disposed:false};assert.equal(shouldRender(base),true);for(const change of [{visible:false},{hidden:true},{paused:true},{disposed:true}])assert.equal(shouldRender({...base,...change}),false);});
+const timeline=(await build({entryPoints:['src/product3d/ScrollTimeline.ts'],bundle:true,format:'esm',write:false})).outputFiles[0].text;
+const {sampleTimeline}=await import('data:text/javascript;base64,'+Buffer.from(timeline).toString('base64'));
+test('lid opens and returns exactly to assembly; timeline clamps outside range',()=>{const states=[{rotation:0,lift:0,scale:1,ingredients:0},{rotation:.2,lift:.024,scale:.8,ingredients:1},{rotation:0,lift:0,scale:1,ingredients:0}];assert.deepEqual(sampleTimeline(states,-1),states[0]);assert.deepEqual(sampleTimeline(states,1),states[1]);assert.deepEqual(sampleTimeline(states,9),states[2]);const mid=sampleTimeline(states,.5);assert.ok(mid.lift>0&&mid.lift<.024);});
