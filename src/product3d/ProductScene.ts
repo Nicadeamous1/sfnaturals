@@ -12,7 +12,7 @@ export class ProductScene {
   this.renderer.outputColorSpace=SRGBColorSpace;this.renderer.toneMapping=ACESFilmicToneMapping;this.renderer.toneMappingExposure=1;
   this.renderer.setPixelRatio(Math.min(devicePixelRatio,quality==='full'?1.5:1));
   const canvas=this.renderer.domElement;canvas.setAttribute('aria-hidden','true');canvas.hidden=true;host.append(canvas);
-  this.camera.position.set(...config.camera);this.camera.lookAt(0,.05,0);this.lights=new ProductLighting(this.scene,this.renderer);
+  this.camera.position.set(...config.camera);this.camera.lookAt(0,.05,0);this.lights=new ProductLighting(this.scene);
   this.timeline=new ScrollTimeline([...document.querySelectorAll<HTMLElement>('[data-story-step]')]);
   this.interaction=new InteractionController(host,()=>this.request());this.monitor=new PerformanceMonitor(host,()=>this.degrade());
   const signal=this.events.signal;
@@ -24,7 +24,7 @@ export class ProductScene {
   document.querySelector<HTMLButtonElement>('[data-static-3d]')?.addEventListener('click',()=>this.fail('user-static'),{signal});
   host.dataset.quality=quality;this.resize();
  }
- async init(){const gltf=await this.loader.load(this.config.modelUrl);if(this.disposed){disposeModel(gltf.scene);return;}this.model=new ProductModel(gltf.scene);this.scene.add(this.model.group);await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed)return;this.fallback.ready();document.querySelector<HTMLElement>('.product3d-controls')?.removeAttribute('hidden');this.request();}
+ async init(){const results=await Promise.allSettled([this.loader.load(this.config.modelUrl),this.lights.load()]);if(results[0].status==='rejected'||results[1].status==='rejected'){if(results[0].status==='fulfilled')disposeModel(results[0].value.scene);throw new Error('Product resources unavailable');}const gltf=results[0].value;if(this.disposed){disposeModel(gltf.scene);return;}this.model=new ProductModel(gltf.scene,this.config);this.scene.add(this.model.group);await this.renderer.compileAsync(this.scene,this.camera);if(this.disposed)return;this.fallback.ready();document.querySelector<HTMLElement>('.product3d-controls')?.removeAttribute('hidden');this.request();}
  private resize(){const {width,height}=this.host.getBoundingClientRect();if(!width||!height)return;this.renderer.setSize(width,height,false);this.camera.aspect=width/height;this.camera.position.z=Math.max(this.config.camera[2],3.6/this.camera.aspect);this.camera.updateProjectionMatrix();}
  private active(){return shouldRender({visible:this.visible,hidden:document.hidden,paused:this.paused,disposed:this.disposed});}
  private request(){if(!this.active()){cancelAnimationFrame(this.frame);this.frame=0;this.last=0;this.monitor.reset();this.host.dataset.rendering='false';return;}if(!this.frame&&this.model)this.frame=requestAnimationFrame(t=>this.render(t));}
@@ -33,5 +33,7 @@ export class ProductScene {
  fail(reason:string){this.fallback.show(reason);this.dispose();document.querySelector<HTMLElement>('.product3d-controls')?.setAttribute('hidden','');}
  dispose(){if(this.disposed)return;this.disposed=true;cancelAnimationFrame(this.frame);this.frame=0;this.events.abort();this.observer.disconnect();this.resizeObserver.disconnect();this.interaction.dispose();this.loader.dispose();this.model?.dispose();this.lights.dispose();this.renderer.dispose();this.renderer.forceContextLoss();this.renderer.domElement.remove();this.host.dataset.rendering='false';}
 }
+
+
 
 

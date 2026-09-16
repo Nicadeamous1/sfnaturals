@@ -6,3 +6,7 @@ node_modules/
 *.blend2
 outputs/
 
+
+assets/3d/previews/graybox.png
+assets/3d/previews/evidence/
+
